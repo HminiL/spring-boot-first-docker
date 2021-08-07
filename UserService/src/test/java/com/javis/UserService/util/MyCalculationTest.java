@@ -1,34 +1,42 @@
 package com.javis.UserService.util;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.time.LocalDate;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
-class MyUtilTest {
+class MyCalculationTest {
     @Mock
-    MyUtil myUtil;
+    MyCalculation myCalculation;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
-        myUtil = new MyUtil();
-
+        myCalculation = new MyCalculation();
     }
 
-    @DisplayName("입력한 시간까지 남은 시간")
     @Test
-    void test_findXmasEve() {
-        //System.out.println(myUtil.howLongRemain(LocalDate.now(),"12","25"));
-        System.out.println(myUtil.usedTime("09","30","00","18","00","00"));
+    void test_Sum() {
+        assertEquals(7,myCalculation.sum(3,4));
     }
 
+    @Test
+    void test_subtract() {
+        assertEquals(5,myCalculation.subtract(9,4));
+    }
+
+    @Test
+    void test_multiple() {
+        assertEquals("12",myCalculation.multiple("3","4"));
+    }
+
+    @Test
+    void test_divide() {
+        assertEquals("2",myCalculation.divide("8","4"));
+    }
 }
