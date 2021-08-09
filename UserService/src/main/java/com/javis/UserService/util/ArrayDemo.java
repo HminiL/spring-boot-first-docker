@@ -2,7 +2,7 @@ package com.javis.UserService.util;
 
 import java.util.Arrays;
 
-public class ArrayDemo {
+public final class ArrayDemo {
     public  int[] fill(int number){
         int[] arr = new int[5];
         Arrays.fill(arr, number);

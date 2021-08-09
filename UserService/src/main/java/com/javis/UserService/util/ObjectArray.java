@@ -5,15 +5,13 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
-@RequiredArgsConstructor
-@Getter
-@ToString
-class Product{
+
+@Data final class Product{
     private final int productId;
     private final String description;
 }
 
-public class ObjectArray {
+public final class ObjectArray {
 
     public Product[] createCart() {
         Product[] cart = new Product[5];
